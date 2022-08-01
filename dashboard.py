@@ -7,7 +7,7 @@ page_icon='🤖')
 # 
 
 st.markdown("## KPI First Row")
-kpi1, kpi2,kpi3 = st.beta_columns(3)
+kpi1, kpi2,kpi3 = st.columns(3)
 
 with kpi1:
     st.markdown("**KPI 1**")
@@ -28,7 +28,7 @@ st.markdown("</hr>", unsafe_allow_html=True)
 
 st.markdown("## KPI Second Row")
 
-kpi01,kpi02, kpi03, kpi04, kpi05 = st.beta_columns(5)
+kpi01,kpi02, kpi03, kpi04, kpi05 = st.columns(5)
 
 with kpi01:
     st.markdown("**KPI 01**")
@@ -60,7 +60,7 @@ st.markdown("</hr>", unsafe_allow_html=True)
 
 st.markdown("## Chart Layout")
 
-first_chart, second_chart = st.beta_columns(2)
+first_chart, second_chart = st.columns(2)
 
 with first_chart:
     st.markdown("## First Chart")
