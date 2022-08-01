@@ -64,9 +64,9 @@ first_chart, second_chart = st.columns(2)
 
 with first_chart:
     st.markdown("## First Chart")
-    st.pyplot(pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('A').hist())
+    st.pyplot(fig=pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('A').hist())
 
 with second_chart:
     st.markdown("## Second Chart")
-    st.pyplot(pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('B').hist())
+    st.pyplot(fig= pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('B').hist())
 
