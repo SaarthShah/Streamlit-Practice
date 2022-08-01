@@ -63,12 +63,13 @@ st.markdown("## Chart Layout")
 
 first_chart, second_chart = st.columns(2)
 
+df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
+
+
 with first_chart:
     st.markdown("## First Chart")
-    df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
     st.pyplot(plt.plot(df.get(['A'])))
 
 with second_chart:
-    st.markdown("## Second Chart")
-    st.pyplot(fig= pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('B').hist())
-
+    st.markdown("## First Chart")
+    st.pyplot(plt.plot(df.get(['A'])))
