@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Dashboard", layout="centered",
 page_icon='🤖')
@@ -64,7 +65,8 @@ first_chart, second_chart = st.columns(2)
 
 with first_chart:
     st.markdown("## First Chart")
-    st.pyplot(fig=pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')).get('A').hist())
+    df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
+    st.pyplot(plt.plot(df.get(['A'])))
 
 with second_chart:
     st.markdown("## Second Chart")
