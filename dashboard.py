@@ -3,27 +3,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Dashboard", layout="centered",
-page_icon='🤖')
-# 
+st.set_page_config(page_title="Test", layout="centered",
+page_icon='https://i.imgur.com/7EdF8Rl.png')
 
-st.markdown("## KPI First Row")
-kpi1, kpi2,kpi3 = st.columns(3)
-
-with kpi1:
-    st.markdown("**KPI 1**")
-    kpi1_no =1
-    st.markdown(f"##{kpi1_no}") 
-
-with kpi2:
-    st.markdown("**KPI 2**")
-    kpi2_no =2
-    st.markdown(f"##{kpi2_no}") 
-
-with kpi3:
-    st.markdown("**KPI 3**")
-    kpi3_no =3
-    st.markdown(f"##{kpi3_no}")
+#### ADDING THE DASHBOARD MENU ####
 
 st.markdown("</hr>", unsafe_allow_html=True)
 
