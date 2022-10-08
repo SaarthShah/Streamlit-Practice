@@ -7,74 +7,44 @@ st.set_page_config(page_title="Dashboard", layout="centered",
 page_icon='🤖')
 # 
 
-st.markdown("## KPI First Row")
-kpi1, kpi2,kpi3 = st.columns(3)
+st.set_page_config(page_title="Marketing", layout="centered",
+page_icon='https://i.imgur.com/7EdF8Rl.png')
 
-with kpi1:
-    st.markdown("**KPI 1**")
-    kpi1_no =1
-    st.markdown(f"##{kpi1_no}") 
+st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
 
-with kpi2:
-    st.markdown("**KPI 2**")
-    kpi2_no =2
-    st.markdown(f"##{kpi2_no}") 
+#### ADDING THE DASHBOARD MENU ####
 
-with kpi3:
-    st.markdown("**KPI 3**")
-    kpi3_no =3
-    st.markdown(f"##{kpi3_no}")
+st.markdown("""
+<nav class="navbar fixed-top navbar-expand-md navbar-dark" style="background-color: #0E1117; top:45px">
+  <div class="container ">
+    <a class="navbar-brand" href="#">
+      <img src="https://i.imgur.com/EvY4Eef.png" alt="" height="35">
+    </a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://youtube.com/dataprofessor" target="_blank">Business</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Marketing <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://twitter.com/thedataprof" target="_blank">Data</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://youtube.com/dataprofessor" target="_blank">UX</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+""", unsafe_allow_html=True)
+today = datetime.now()
+lastweek = today - timedelta(days=7)
+lastweek_range = pd.date_range(start=lastweek,end=today).to_pydatetime().tolist()
 
-st.markdown("</hr>", unsafe_allow_html=True)
-
-st.markdown("## KPI Second Row")
-
-kpi01,kpi02, kpi03, kpi04, kpi05 = st.columns(5)
-
-with kpi01:
-    st.markdown("**KPI 01**")
-    kpi01_no =1
-    st.markdown(f"##{kpi01_no}")
-
-with kpi02:
-    st.markdown("**KPI 02**")
-    kpi02_no =2
-    st.markdown(f"##{kpi02_no}")
-
-with kpi03:
-    st.markdown("**KPI 03**")
-    kpi03_no =3
-    st.markdown(f"##{kpi03_no}")
-
-with kpi04:
-    st.markdown("**KPI 04**")
-    kpi04_no =4
-    st.markdown(f"##{kpi04_no}")
-
-with kpi05:
-    st.markdown("**KPI 05**")
-    kpi05_no =5
-    st.markdown(f"##{kpi05_no}")
-
-
-st.markdown("</hr>", unsafe_allow_html=True)
-
-st.markdown("## Chart Layout")
-
-first_chart, second_chart = st.columns(2)
-df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
-
-
-with first_chart:
-    st.markdown("### First Chart")
-    fig = plt.figure(figsize=(6, 4))
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.bar(df.index, df['A'])
-    st.pyplot(fig)
-
-with second_chart:
-    st.markdown("### Second Chart")
-    fig = plt.figure(figsize=(6, 4))
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.bar(df.index, df['B'])
-    st.pyplot(fig)
+st.markdown("""
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+""", unsafe_allow_html=True)
