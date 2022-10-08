@@ -62,14 +62,19 @@ st.markdown("</hr>", unsafe_allow_html=True)
 st.markdown("## Chart Layout")
 
 first_chart, second_chart = st.columns(2)
-
 df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
 
 
 with first_chart:
-    st.markdown("## First Chart")
-    st.pyplot(plt.plot(df.get(['A'])))
+    st.markdown("### First Chart")
+    fig = plt.figure(figsize=(6, 4))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.bar(df.index, df['A'])
+    st.pyplot(fig)
 
 with second_chart:
-    st.markdown("## First Chart")
-    st.pyplot(plt.plot(df.get(['A'])))
+    st.markdown("### Second Chart")
+    fig = plt.figure(figsize=(6, 4))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.bar(df.index, df['B'])
+    st.pyplot(fig)
